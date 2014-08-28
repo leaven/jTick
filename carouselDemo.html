@@ -1,0 +1,558 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://list.video.baidu.com/pc_static/common/base.css" />
+<style>
+  h3{
+    font: 30px/60px "微软雅黑";
+    color: #999;
+    width:984px;
+    margin:0 auto;
+  }
+  /*3D*/
+   #carouselContainer{
+  	width:984px;
+	height:600px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+   }
+   #carouselContainer .bdv-carousel-list{
+        position:absolute;
+        left:0;
+        top:0;
+        width: 984px;
+        height:500px;
+   }
+   #carouselContainer .bdv-carousel-list li{
+        float:left;
+        width:570px;
+        height:500px;
+   }
+   #carouselContainer .bdv-carousel-list li img{
+        width:100%;
+        height:100%;
+   }
+
+   /*2D*/
+
+   #hCarouselContainer{
+        width:984px;
+        height:600px;
+        margin:0 auto;
+        overflow:hidden;
+        position:relative;
+   }
+   #hCarouselContainer .bdv-carousel-list{
+        position:absolute;
+        left:0;
+        top:0;
+        width: 984px;
+        height:500px;
+   }
+   #hCarouselContainer .bdv-carousel-list li{
+        float:left;
+        width:984px;
+        height:500px;
+   }
+   #hCarouselContainer .bdv-carousel-list li img{
+        width:100%;
+        height:100%;
+   }
+    /*vertical*/
+   #vCarouselContainer{
+        width:984px;
+        height:500px;
+        margin:0 auto;
+        overflow:hidden;
+        position:relative;
+   }
+/*   #vCarouselContainer .bdv-carousel-list{
+        position:absolute;
+        left:0;
+        top:0;
+        width: 984px;
+        height:500px;
+   }*/
+   #vCarouselContainer .bdv-carousel-list li{
+        float:left;
+        width:984px;
+        height:500px;
+   }
+   #vCarouselContainer .bdv-carousel-list li img{
+        width:100%;
+        height:100%;
+   }
+   /*fade*/
+     #fCarouselContainer{
+        width:984px;
+        height:500px;
+        margin:100px auto;
+        overflow:hidden;
+        position:relative;
+   }
+/*   #fCarouselContainer .bdv-carousel-list{
+        position:absolute;
+        left:0;
+        top:0;
+        width: 984px;
+        height:500px;
+   }*/
+   #fCarouselContainer .bdv-carousel-list li{
+        float:left;
+        width:984px;
+        height:500px;
+   }
+   #fCarouselContainer .bdv-carousel-list li img{
+        width:100%;
+        height:100%;
+   }
+   .bdv-carousel-control .bdv-carousel-dot{
+         width:984px;
+         height:30px;
+         position: absolute;
+         left:0;
+         bottom:30px;
+         text-align: center;
+   }
+   .bdv-carousel-dot li{
+                display: inline-block;_display:inline;
+                cursor: pointer;
+                width: 10px;
+                height: 10px;
+                margin-left: 10px;
+                border-radius: 5px;
+                background-color: #878689;
+   }
+   .bdv-carousel-dot li.dot-selected{
+   		background-color: #FFF
+   }
+  /* .bdv-carousel-control a{
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -34px;
+                width: 80px;
+                height: 80px;
+                background: url('http://vs5.bdstatic.com/browse_static/widget/city/focus/arrow_e365e085.png') -80px 0 no-repeat;
+   }
+   .bdv-carousel-control .bdv-carousel-prev{
+                left:0;
+   }
+   .bdv-carousel-control .bdv-carousel-next{
+                right: 0;
+                background-position: -80px -80px;
+   }*/
+   /*垂直滚动*/
+   #newsCarouselContainer{
+                width:984px;
+                height:20px;
+                position:relative;
+                margin:50px auto;
+                overflow: hidden;
+   }
+  #newsCarouselContainer  .bdv-carousel-list{
+                position:absolute;
+                left:0;
+                top:0;
+                width: 984px;
+                height:500px;
+   }
+   #newsCarouselContainer .bdv-carousel-list li{
+                float:left;
+                width:984px;
+                height:20px;
+                font:16px/20px "微软雅黑";
+   }
+   /*水平滚动*/
+    #hNewsCarouselContainer{
+                width:110px;
+                height:20px;
+                position:relative;
+                margin:50px auto;
+                overflow: hidden;
+   }
+  #hNewsCarouselContainer  .bdv-tick-list{
+                position:absolute;
+                left:0;
+                top:0;
+                width: 984px;
+                height:500px;
+   }
+   #hNewsCarouselContainer .bdv-tick-list li{
+                float:left;
+                width:110px;
+                height:20px;
+                font:16px/20px "微软雅黑";
+   }
+   /*tab*/
+  #tabCarouselContainer{
+        width:984px;
+        margin:100px auto;
+        overflow:hidden;
+        position:relative;
+   }
+   #tabCarouselContainer .bdv-carousel-list{
+        width: 984px;
+   }
+    #tabCarouselContainer .bdv-carousel-list>li{
+        float:left;
+        width:984px;
+        display: none;
+   }
+   #tabCarouselContainer .bdv-carousel-list .tab-content li{
+      float:left;
+      width:200px;
+      height: 100px;
+      margin: 20px;
+   }
+   #tabCarouselContainer .bdv-carousel-list .tab-content li img{
+      width:100%;
+      height: 100%;
+   }
+    #tabCarouselContainer  .bdv-carousel-dot li{
+
+        display: inline-block;_display:inline;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        padding: 0 10px;
+        margin-left: 10px;
+        border-radius: 0;
+        color: #999;
+        background:#303030;
+   }
+   #tabCarouselContainer .bdv-carousel-dot li.dot-selected{
+       color: #FFF;
+      background-color: #4f4f4f;
+   }
+    #tabCarouselContainer .bdv-carousel-control .bdv-carousel-dot{
+         width:984px;
+         height:30px;
+         margin-bottom: 20px;
+         position: static;
+         text-align: left;
+   }
+</style>
+</head>
+<body>
+  
+  <div id="carouselContainer">
+        <h3>3D轮播Demo</h3>
+        <ul class="bdv-carousel-list">
+                <li>
+                <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                        <ul><li></li><li></li></ul>
+                </li>
+                <li><img src="http://c.hiphotos.baidu.com/image/pic/item/58ee3d6d55fbb2fb593177e74d4a20a44623dc28.jpg" /></li>
+                <li><img src="http://h.hiphotos.baidu.com/image/pic/item/6159252dd42a2834c3f759f859b5c9ea14cebff4.jpg" /></li>
+                <li><img src="http://b.hiphotos.baidu.com/image/pic/item/7c1ed21b0ef41bd5d4a7870753da81cb38db3d48.jpg" /></li>
+                <li><img src="http://g.hiphotos.baidu.com/image/pic/item/dcc451da81cb39dbc83408a5d2160924aa183048.jpg" /></li>
+        </ul>
+        <div class="bdv-carousel-control">
+                <ul class="bdv-carousel-dot">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+                <a class="bdv-carousel-prev" href="javascript:void(0)"></a>
+                <a class="bdv-carousel-next" href="javascript:void(0)"></a>          
+        </div>
+  </div>
+  
+  <h3>文字垂直滚动Demo</h3>
+  <div id="newsCarouselContainer">
+        
+        <ul class="bdv-carousel-list">
+                <li>文字垂直滚动</li>
+                <li>文字垂直滚动</li>
+                <li>文字垂直滚动</li>
+                <li>文字垂直滚动</li>
+                <li>文字垂直滚动</li>
+        </ul>
+  </div>
+
+ <h3>文字水平滚动Demo</h3>
+  <div id="hNewsCarouselContainer">
+         
+        <ul class="bdv-tick-list">
+                <li>文字水平滚动1</li>
+                <li>文字水平滚动2</li>
+                <li>文字水平滚动3</li>
+                <li>文字水平滚动4</li>
+                <li>文字水平滚动5</li>
+        </ul>
+        <div class="bdv-tick-control">
+            <a class="btn-prev bdv-tick-next" href="javascript:void(0)">&lt;</a>
+            <a class="btn-next bdv-tick-next" href="javascript:void(0)">&gt;</a>
+        </div>
+  </div>
+    
+   <div id="hCarouselContainer">
+          <h3>2D水平轮播Demo</h3>
+         <ul class="bdv-carousel-list">
+                <li class="bdv-carousel-item">
+                <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                        <ul><li></li><li></li></ul>
+                </li>
+                <li><img src="http://c.hiphotos.baidu.com/image/pic/item/58ee3d6d55fbb2fb593177e74d4a20a44623dc28.jpg" /></li>
+                <li><img src="http://h.hiphotos.baidu.com/image/pic/item/6159252dd42a2834c3f759f859b5c9ea14cebff4.jpg" /></li>
+                <li><img src="http://b.hiphotos.baidu.com/image/pic/item/7c1ed21b0ef41bd5d4a7870753da81cb38db3d48.jpg" /></li>
+                <li><img src="http://g.hiphotos.baidu.com/image/pic/item/dcc451da81cb39dbc83408a5d2160924aa183048.jpg" /></li>
+        </ul>
+        <div class="bdv-carousel-control">
+                <ul class="bdv-carousel-dot">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+                <a class="bdv-carousel-prev" href="javascript:void(0)"></a>
+                <a class="bdv-carousel-next" href="javascript:void(0)"></a>          
+        </div>
+	</div>
+    
+   <div id="vCarouselContainer">
+          <h3>2D垂直轮播Demo</h3>
+         <ul class="bdv-carousel-list">
+                <li>
+                <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                        <ul><li></li><li></li></ul>
+                </li>
+                <li><img src="http://c.hiphotos.baidu.com/image/pic/item/58ee3d6d55fbb2fb593177e74d4a20a44623dc28.jpg" /></li>
+                <li><img src="http://h.hiphotos.baidu.com/image/pic/item/6159252dd42a2834c3f759f859b5c9ea14cebff4.jpg" /></li>
+                <li><img src="http://b.hiphotos.baidu.com/image/pic/item/7c1ed21b0ef41bd5d4a7870753da81cb38db3d48.jpg" /></li>
+                <li><img src="http://g.hiphotos.baidu.com/image/pic/item/dcc451da81cb39dbc83408a5d2160924aa183048.jpg" /></li>
+        </ul>
+        <div class="bdv-carousel-control">
+                <ul class="bdv-carousel-dot">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+                <a class="bdv-carousel-prev" href="javascript:void(0)"></a>
+                <a class="bdv-carousel-next" href="javascript:void(0)"></a>          
+        </div> 
+  </div>
+    
+   <div id="fCarouselContainer">
+        <h3>淡入淡出Demo</h3>
+        <div class="bdv-carousel-container">
+          <ul class="bdv-carousel-list">
+                  <li>
+                  <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                          <ul><li></li><li></li></ul>
+                  </li>
+                  <li><img src="http://c.hiphotos.baidu.com/image/pic/item/58ee3d6d55fbb2fb593177e74d4a20a44623dc28.jpg" /></li>
+                  <li><img src="http://h.hiphotos.baidu.com/image/pic/item/6159252dd42a2834c3f759f859b5c9ea14cebff4.jpg" /></li>
+                  <li><img src="http://b.hiphotos.baidu.com/image/pic/item/7c1ed21b0ef41bd5d4a7870753da81cb38db3d48.jpg" /></li>
+                  <li><img src="http://g.hiphotos.baidu.com/image/pic/item/dcc451da81cb39dbc83408a5d2160924aa183048.jpg" /></li>
+          </ul>
+        </div>
+        <div class="bdv-carousel-control">
+                <ul class="bdv-carousel-dot">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+                <a class="bdv-carousel-prev" href="javascript:void(0)"></a>
+                <a class="bdv-carousel-next" href="javascript:void(0)"></a>          
+        </div>  
+  </div>
+      
+     <div id="tabCarouselContainer">
+      <h3>tab切换Demo</h3>
+      <div class="bdv-carousel-control">
+                <ul class="bdv-carousel-dot">
+                        <li>电影</li>
+                        <li>电视剧</li>
+                        <li>综艺</li>
+                        <li>动漫</li>
+                        <li>教育</li>
+                </ul>        
+        </div>  
+        <div class="bdv-carousel-container">
+          <ul class="bdv-carousel-list">
+                  <li>
+                    <script type="text/html">
+                      <ul class="tab-content clearfloat">
+                         <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                       </ul>
+                       </script>
+                  </li>
+               <li>
+                    <script type="text/html">
+                      <ul class="tab-content clearfloat">
+                         <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                       </ul>
+                       </script>
+                  </li>
+                   <li>
+                    <script type="text/html">
+                      <ul class="tab-content clearfloat">
+                         <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                       </ul>
+                       </script>
+                  </li>
+                   <li>
+                    <script type="text/html">
+                      <ul class="tab-content clearfloat">
+                         <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                       </ul>
+                       </script>
+                  </li>
+                   <li>
+                    <script type="text/html">
+                      <ul class="tab-content clearfloat">
+                         <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                          <li>
+                             <img src="http://f.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efb35790a9fffaaf51f2de66cf.jpg" />
+                         </li>
+                       </ul>
+                       </script>
+                  </li>
+          </ul>
+        </div>
+       
+  </div>
+  <script src="./jquery.min.js"></script>
+  <script src="./tick.js"></script>
+  <script>
+  
+    //font
+    // $("#newsCarouselContainer").bdvCarousel({
+    //         containerWidth : 984,
+    //         containerHeight : 20,
+    //         originalIndex : 0,
+    //         animate : "slide2dVertical"
+    // });
+     $("#hNewsCarouselContainer").bdvTick({
+            containerWidth : 110,
+            containerHeight : 20,
+            originalIndex : 0,
+            animate : "slide2dHorizontal"
+    });
+    //2d  image
+    // $("#hCarouselContainer").bdvCarousel({
+    //         outContainerWidth : 984,
+    //         containerWidth : 984,
+    //         containerHeight : 500,
+    //         originalIndex : 0,
+    //        // animate : "slide3dHorizontal"
+    //         animate : "slide2dHorizontal"
+    //         //animate : "fade"
+    // });
+    //  //2d  image
+    // $("#vCarouselContainer").bdvCarousel({
+    //         outContainerHeight : 500,
+    //         containerWidth : 984,
+    //         containerHeight : 500,
+    //         originalIndex : 0,
+    //        // animate : "slide3dHorizontal"
+    //         animate : "slide2dVertical"
+    //         //animate : "fade"
+    // });
+    //fade
+    // $("#fCarouselContainer").bdvCarousel({
+    //         containerWidth : 984,
+    //         containerHeight : 500,
+    //         originalIndex : 0,
+    //        // animate : "slide3dHorizontal"
+    //        // animate : "slide2dHorizontal"
+    //         animate : "fade"
+    // });
+
+  </script>
+</body>
+</html>
+
