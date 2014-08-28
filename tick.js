@@ -35,7 +35,7 @@
 		originalIndex : 0,
 		autoScroll : true,
 		duration : 5000,
-		direction : 'forward'
+		direction : 'right'
 
 	};
 	var Tick = {
@@ -71,7 +71,6 @@
 		eventHandler : function() {
 			var self = this;
 			self.$elm.on("mouseenter",function() {
-				console.log("come");
 				self.stop();
 			});
 			self.$elm.on("mouseleave",function() {
@@ -87,13 +86,13 @@
 				var curTime = new Date().getTime();
 				if((curTime - prevTime) < (self.options.duration - 100))return;
 				prevTime = curTime;
-				self.prev();
+				self.prev("left");
 			})
 			self.$container.find(".bdv-tick-next").on("click", function() {
 				var curTime = new Date().getTime();
 				if((curTime - prevTime) < (self.options.duration - 100))return;
 				prevTime = curTime;
-				self.next();
+				self.next("right");
 			})
 		},
 		//开始轮播
@@ -102,7 +101,7 @@
 
 			if(self.options.autoScroll) {
 				self.pid = true;
-				self.animate();	
+				self.animate(self.options.direction);	
 			}
 		},
 		
@@ -113,22 +112,22 @@
 			self.pid = false;
 		},
 		//以step为单位翻到下一项
-		next : function() {
+		next : function(direction) {
 			var self = this;
 			//手动滚动时先暂停
 			self.stop();
 			
-			self.animate();
+			self.animate(direction);
 
 			self.start();
 
 		},
 
 		//以step为单位翻到上一项
-		prev : function() {
+		prev : function(direction) {
 			var self = this;
 			self.stop();
-		  
+		 	 self.animate(direction);
 		  	self.start();
 		},
 
@@ -143,17 +142,32 @@
 		},
 
 		//2d水平、垂直动画函数
-		animate : function() {
-			var self = this;
+		animate : function(direction) {
+			var self = this,
+				$childrenList = self.$elm.children("li");
 			if(self.pid) {
-				self.$elm.animate({
-					left : -self.options.containerWidth + "px",
-					}, 
-					self.options.duration, 
-					function() {
-						self.afterRender();
-					}
-				);
+
+				//前滚
+				if(direction == "left") {
+					var $removeNode = $childrenList.eq[$childrenList.length-1];
+					$removeNode.prependTo(self.$elm[0]);
+					self.$elm.css(left,-self.options.containerWidth);
+					self.$elm.animate({
+						left : "0px",
+						}, 
+						self.options.duration
+					);
+				}else {
+					self.$elm.animate({
+						left : -self.options.containerWidth +"px",
+						}, 
+						self.options.duration, 
+						function() {
+							self.afterRender();
+						}
+					);
+				}
+				
 			}
 		},
 		//动画执行前回调
@@ -176,6 +190,6 @@
 
 			$removeNode.appendTo(self.$elm[0]);
 			self.$elm.css("left",0);
-			self.animate();
+			self.animate(self.options.direction);
 		}
 	};
